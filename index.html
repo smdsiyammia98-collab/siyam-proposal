@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sadiya ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #dceeff, #ffffff, #b8d9ff);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+h1 {
+  color: #0756ad;
+  margin-bottom: 25px;
+}
+
+.card {
+  width: 280px;
+  max-width: 85vw;
+  margin: auto;
+  background: white;
+  padding: 12px;
+  border-radius: 22px;
+  box-shadow: 0 15px 40px #1769e055;
+  animation: enter 3s ease forwards;
+  transform: rotateY(360deg) scale(.5);
+}
+
+@keyframes enter {
+  0% {
+    transform: rotateY(0deg) scale(.5);
+    opacity: 0;
+  }
+  70% {
+    transform: rotateY(720deg) scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(1080deg) scale(1);
+    opacity: 1;
+  }
+}
+
+.photo {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  background: #dceeff;
+}
+
+.message {
+  padding: 15px 5px;
+  color: #174b87;
+}
+
+.message h2 {
+  color: #0756ad;
+  margin-bottom: 10px;
+}
+
+.message p {
+  line-height: 1.6;
+}
+
+.buttons {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+button {
+  border: none;
+  padding: 13px 24px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.yes {
+  background: #0875e1;
+  color: white;
+}
+
+.sadiya {
+  background: #e2efff;
+  color: #0756ad;
+}
+
+#result {
+  margin-top: 20px;
+  color: #0756ad;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  color: #1685ff;
+  font-size: 25px;
+  animation: float 4s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.upload {
+  margin-top: 20px;
+  color: #0756ad;
+  font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>💙 A Special Message 💙</h1>
+
+<div class="card">
+
+<img id="myPhoto"
+class="photo"
+src=""
+alt="Siyam's Photo">
+
+<div class="message">
+
+<h2>I Love You ❤️</h2>
+
+<h3>Siyam</h3>
+
+<p>
+You are the reason for my smile.<br>
+The peace in my heart.<br>
+And the happiness in my life.
+</p>
+
+<h3 style="margin-top:15px;">
+Will You Be My Girlfriend?
+</h3>
+
+<div class="buttons">
+
+<button class="yes" onclick="sayYes()">
+Yes ❤️
+</button>
+
+<button class="sadiya" onclick="saySadiya()">
+Sadiya
+</button>
+
+</div>
+
+<div id="result"></div>
+
+</div>
+</div>
+
+<div class="upload">
+নিজের ছবি যোগ করো:
+<br>
+<input type="file" accept="image/*"
+onchange="uploadPhoto(event)">
+</div>
+
+</div>
+
+<script>
+function uploadPhoto(event) {
+  const file = event.target.files[0];
+
+  if (file) {
+    document.getElementById("myPhoto").src =
+      URL.createObjectURL(file);
+  }
+}
+
+function sayYes() {
+  document.getElementById("result").innerHTML =
+    "❤️ Thank You Sadiya! ❤️";
+
+  for (let i = 0; i < 30; i++) {
+    createHeart();
+  }
+}
+
+function saySadiya() {
+  document.getElementById("result").innerHTML =
+    "💙 Specially For Sadiya 💙";
+
+  for (let i = 0; i < 10; i++) {
+    createHeart();
+  }
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💙";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 4000);
+}
+</script>
+
+</body>
+</html>
