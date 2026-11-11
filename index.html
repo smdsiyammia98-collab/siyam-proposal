@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Siyam ❤️ Sadiya</title>
 
+<!-- Thin Elegant Cursive Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 * {
   margin: 0;
@@ -12,47 +17,73 @@
   box-sizing: border-box;
 }
 
+:root {
+  --blue: #0875e1;
+  --navy: #0756ad;
+  --light: #eaf3ff;
+}
+
 body {
   min-height: 100vh;
   background: linear-gradient(135deg,#d9eaff,#ffffff,#a9ceff);
-  font-family: Arial,sans-serif;
+  font-family: 'Parisienne', cursive;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
   padding: 20px;
+  color: var(--navy);
 }
 
 .container {
   width: 100%;
-  max-width: 380px;
+  max-width: 390px;
   text-align: center;
 }
 
+/* Welcome */
 #welcome {
   animation: welcome 2s ease;
-  color: #0756ad;
+  color: var(--navy);
 }
 
 #welcome h1 {
-  font-size: 34px;
+  font-size: 48px;
+  font-weight: 400;
+  text-shadow: 0 0 12px #64aaff;
+  animation: glow 2s infinite alternate;
 }
 
 #welcome p {
-  margin-top: 12px;
+  margin-top: 15px;
+  font-size: 25px;
+  color: #3979bb;
 }
 
 @keyframes welcome {
-  from {opacity:0; transform:scale(.5);}
-  to {opacity:1; transform:scale(1);}
+  from {
+    opacity: 0;
+    transform: scale(.5) translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
+@keyframes glow {
+  from { text-shadow: 0 0 8px #64aaff; }
+  to { text-shadow: 0 0 20px #0875e1, 0 0 35px #64aaff; }
+}
+
+/* Card */
 .card {
   display: none;
-  background: white;
-  padding: 15px;
-  border-radius: 25px;
+  background: rgba(255,255,255,.96);
+  padding: 17px;
+  border-radius: 28px;
   box-shadow: 0 15px 50px #0756ad40;
+  border: 1px solid #d7eaff;
 }
 
 .card.show {
@@ -75,78 +106,117 @@ body {
   }
 }
 
+/* Photo */
 .photo {
   width: 100%;
   height: 320px;
   object-fit: cover;
-  border-radius: 18px;
+  border-radius: 20px;
   border: 4px solid #c5e0ff;
+  box-shadow: 0 8px 22px #0875e130;
+  transition: transform .4s;
 }
 
+.photo:hover {
+  transform: scale(1.02);
+}
+
+/* All Headings */
 h2 {
-  color: #0756ad;
-  margin-top: 18px;
-  font-size: 27px;
+  color: var(--navy);
+  margin-top: 20px;
+  font-size: 38px;
+  font-weight: 400;
 }
 
+/* Name */
 .name {
-  font-size: 23px;
-  font-weight: bold;
-  margin: 13px;
-  color: #1769e0;
+  font-family: 'Parisienne', cursive;
+  font-size: 38px;
+  font-weight: 400;
+  margin: 16px 5px;
+  background: linear-gradient(90deg,#0756ad,#1595ff,#0756ad);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
+/* Message */
 .message {
   color: #315b89;
-  line-height: 1.8;
-  font-size: 15px;
-  padding: 8px;
+  line-height: 2;
+  font-size: 27px;
+  font-weight: 400;
+  padding: 12px 8px;
+  background: #f1f7ff;
+  border-radius: 16px;
+  margin-top: 10px;
 }
 
+/* Question */
 .question {
-  margin-top: 15px;
-  color: #0756ad;
-  font-size: 19px;
+  margin-top: 20px;
+  color: var(--navy);
+  font-size: 29px;
+  font-weight: 400;
 }
 
+/* Buttons */
 .buttons {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 20px;
+  margin-top: 22px;
+  flex-wrap: wrap;
 }
 
 button {
   border: none;
-  padding: 13px 23px;
+  padding: 14px 24px;
   border-radius: 30px;
-  font-size: 16px;
+  font-size: 22px;
+  font-family: 'Parisienne', cursive;
+  font-weight: 400;
   cursor: pointer;
+  transition: transform .3s, box-shadow .3s;
+}
+
+button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 18px #0756ad35;
+}
+
+button:active {
+  transform: scale(.96);
 }
 
 .yes {
-  background: #0875e1;
+  background: linear-gradient(135deg,#0875e1,#0756ad);
   color: white;
 }
 
 .sadiya {
-  background: #e2efff;
-  color: #0756ad;
+  background: linear-gradient(135deg,#e2efff,#c5e0ff);
+  color: var(--navy);
 }
 
+/* Result */
 #result {
-  color: #0756ad;
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 18px;
+  color: var(--navy);
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: 20px;
+  line-height: 1.6;
 }
 
+/* Floating Hearts */
 .heart {
   position: fixed;
   bottom: -30px;
   font-size: 25px;
   animation: float 4s linear forwards;
   pointer-events: none;
+  z-index: 10;
 }
 
 @keyframes float {
@@ -156,16 +226,24 @@ button {
   }
 }
 
+/* Footer */
 .footer {
   color: #4777aa;
-  font-size: 12px;
-  margin-top: 18px;
+  font-size: 23px;
+  margin-top: 20px;
+}
+
+/* Mobile */
+@media (max-width: 360px) {
+  body { padding: 12px; }
+  .photo { height: 270px; }
+  .card { padding: 12px; }
+  .message { font-size: 23px; }
 }
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
   <div id="welcome">
@@ -228,7 +306,7 @@ function sayYes() {
   document.getElementById("result").innerHTML =
     "❤️ Yes! Thank You Sadiya ❤️";
 
-  for(let i=0; i<35; i++) {
+  for(let i = 0; i < 35; i++) {
     createHeart();
   }
 }
@@ -237,7 +315,7 @@ function saySadiya() {
   document.getElementById("result").innerHTML =
     "💙 Specially For Sadiya 💙";
 
-  for(let i=0; i<15; i++) {
+  for(let i = 0; i < 15; i++) {
     createHeart();
   }
 }
@@ -246,13 +324,13 @@ function createHeart() {
   const heart = document.createElement("div");
   heart.className = "heart";
   heart.innerHTML = "💙";
-  heart.style.left = Math.random()*100 + "vw";
+  heart.style.left = Math.random() * 100 + "vw";
 
   document.body.appendChild(heart);
 
   setTimeout(function() {
     heart.remove();
-  },4000);
+  }, 4000);
 }
 </script>
 
