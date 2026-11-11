@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Siyam ❤️ Sadiya</title>
+<title>SIYAM SM ❤️</title>
 
-<!-- Thin Elegant Cursive Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -17,320 +14,220 @@
   box-sizing: border-box;
 }
 
-:root {
-  --blue: #0875e1;
-  --navy: #0756ad;
-  --light: #eaf3ff;
-}
-
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg,#d9eaff,#ffffff,#a9ceff);
-  font-family: 'Parisienne', cursive;
+  background: linear-gradient(135deg, #eaf3ff, #ffffff);
+  color: #17243a;
+  font-family: 'Cormorant Garamond', serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden;
   padding: 20px;
-  color: var(--navy);
+  overflow-x: hidden;
 }
 
-.container {
+.welcome {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #1769e0, #0b3f91);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  animation: welcomeOut 1s ease 3s forwards;
+}
+
+.welcome h1 {
+  color: white;
+  font-family: 'Parisienne', cursive;
+  font-size: clamp(40px, 10vw, 65px);
+  animation: welcomeIn 1.5s ease;
+}
+
+@keyframes welcomeIn {
+  from { opacity: 0; transform: scale(.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes welcomeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.card {
   width: 100%;
-  max-width: 390px;
+  max-width: 420px;
+  background: white;
+  padding: 30px 22px;
+  border-radius: 25px;
   text-align: center;
+  box-shadow: 0 12px 35px rgba(23, 105, 224, .18);
+  border: 1px solid #d8e8ff;
+  animation: cardIn 1.2s ease;
 }
 
-/* Welcome */
-#welcome {
-  animation: welcome 2s ease;
-  color: var(--navy);
-}
-
-#welcome h1 {
-  font-size: 48px;
-  font-weight: 400;
-  text-shadow: 0 0 12px #64aaff;
-  animation: glow 2s infinite alternate;
-}
-
-#welcome p {
-  margin-top: 15px;
-  font-size: 25px;
-  color: #3979bb;
-}
-
-@keyframes welcome {
+@keyframes cardIn {
   from {
     opacity: 0;
-    transform: scale(.5) translateY(25px);
+    transform: rotateY(90deg);
   }
   to {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: rotateY(0);
   }
 }
 
-@keyframes glow {
-  from { text-shadow: 0 0 8px #64aaff; }
-  to { text-shadow: 0 0 20px #0875e1, 0 0 35px #64aaff; }
-}
-
-/* Card */
-.card {
-  display: none;
-  background: rgba(255,255,255,.96);
-  padding: 17px;
-  border-radius: 28px;
-  box-shadow: 0 15px 50px #0756ad40;
-  border: 1px solid #d7eaff;
-}
-
-.card.show {
-  display: block;
-  animation: rotateCard 3s ease forwards;
-}
-
-@keyframes rotateCard {
-  0% {
-    opacity: 0;
-    transform: perspective(900px) rotateY(0deg) scale(.3);
-  }
-  70% {
-    opacity: 1;
-    transform: perspective(900px) rotateY(720deg) scale(1.08);
-  }
-  100% {
-    opacity: 1;
-    transform: perspective(900px) rotateY(1080deg) scale(1);
-  }
-}
-
-/* Photo */
 .photo {
-  width: 100%;
-  height: 320px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 20px;
-  border: 4px solid #c5e0ff;
-  box-shadow: 0 8px 22px #0875e130;
-  transition: transform .4s;
+  border-radius: 50%;
+  border: 5px solid #1769e0;
+  margin-bottom: 20px;
 }
 
-.photo:hover {
-  transform: scale(1.02);
-}
-
-/* All Headings */
-h2 {
-  color: var(--navy);
-  margin-top: 20px;
-  font-size: 38px;
-  font-weight: 400;
-}
-
-/* Name */
-.name {
+h1, h2 {
   font-family: 'Parisienne', cursive;
-  font-size: 38px;
-  font-weight: 400;
-  margin: 16px 5px;
-  background: linear-gradient(90deg,#0756ad,#1595ff,#0756ad);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+  color: #1769e0;
+  margin-bottom: 12px;
 }
 
-/* Message */
+h1 {
+  font-size: 42px;
+}
+
+h2 {
+  font-size: 34px;
+}
+
 .message {
-  color: #315b89;
-  line-height: 2;
-  font-size: 27px;
-  font-weight: 400;
-  padding: 12px 8px;
-  background: #f1f7ff;
-  border-radius: 16px;
-  margin-top: 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  line-height: 1.6;
+  color: #26364d;
+  margin: 18px 0;
 }
 
-/* Question */
 .question {
-  margin-top: 20px;
-  color: var(--navy);
-  font-size: 29px;
-  font-weight: 400;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 18px 0;
 }
 
-/* Buttons */
 .buttons {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 22px;
   flex-wrap: wrap;
 }
 
 button {
-  border: none;
-  padding: 14px 24px;
-  border-radius: 30px;
-  font-size: 22px;
   font-family: 'Parisienne', cursive;
-  font-weight: 400;
+  font-size: 24px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 30px;
   cursor: pointer;
-  transition: transform .3s, box-shadow .3s;
+  background: #1769e0;
+  color: white;
+  transition: .3s;
 }
 
 button:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 8px 18px #0756ad35;
+  background: #0b3f91;
+  transform: scale(1.06);
 }
 
-button:active {
-  transform: scale(.96);
+footer {
+  margin-top: 25px;
+  color: #1769e0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
 }
 
-.yes {
-  background: linear-gradient(135deg,#0875e1,#0756ad);
-  color: white;
-}
-
-.sadiya {
-  background: linear-gradient(135deg,#e2efff,#c5e0ff);
-  color: var(--navy);
-}
-
-/* Result */
-#result {
-  color: var(--navy);
-  font-size: 30px;
-  font-weight: 400;
-  margin-top: 20px;
-  line-height: 1.6;
-}
-
-/* Floating Hearts */
 .heart {
   position: fixed;
   bottom: -30px;
+  color: #1769e0;
   font-size: 25px;
-  animation: float 4s linear forwards;
   pointer-events: none;
-  z-index: 10;
+  animation: floatUp 3s linear forwards;
 }
 
-@keyframes float {
+@keyframes floatUp {
   to {
     transform: translateY(-110vh) rotate(360deg);
     opacity: 0;
   }
 }
-
-/* Footer */
-.footer {
-  color: #4777aa;
-  font-size: 23px;
-  margin-top: 20px;
-}
-
-/* Mobile */
-@media (max-width: 360px) {
-  body { padding: 12px; }
-  .photo { height: 270px; }
-  .card { padding: 12px; }
-  .message { font-size: 23px; }
-}
 </style>
 </head>
 
 <body>
-<div class="container">
 
-  <div id="welcome">
-    <h1>💙 Welcome 💙</h1>
-    <p>A Special Surprise For You</p>
+<div class="welcome">
+  <h1>Welcome 💙</h1>
+</div>
+
+<div class="card">
+
+  <img src="siam_style_1.png" class="photo" alt="Siyam">
+
+  <h1>I Love You ❤️</h1>
+
+  <h2>Siyam ❤️ Sadiya</h2>
+
+  <p class="message">
+    You are special. Keep smiling and stay happy.
+    Sending you lots of love and happiness. 💙
+  </p>
+
+  <p class="question">
+    Will You Be My Girlfriend?
+  </p>
+
+  <div class="buttons">
+    <button onclick="sayYes()">Yes ❤️</button>
+    <button onclick="saySadiya()">Sadiya 💙</button>
   </div>
 
-  <div class="card" id="card">
-
-    <img src="siam_style_1.png"
-         class="photo"
-         alt="Siyam">
-
-    <h2>I Love You ❤️</h2>
-
-    <div class="name">
-      Siyam ❤️ Sadiya
-    </div>
-
-    <div class="message">
-      You are the reason for my smile.<br>
-      The peace in my heart.<br>
-      And the happiness in my life.
-    </div>
-
-    <div class="question">
-      Will You Be My Girlfriend?
-    </div>
-
-    <div class="buttons">
-      <button class="yes" onclick="sayYes()">
-        Yes ❤️
-      </button>
-
-      <button class="sadiya" onclick="saySadiya()">
-        Sadiya 💙
-      </button>
-    </div>
-
-    <div id="result"></div>
-
-  </div>
-
-  <div class="footer">
+  <footer>
     Made with 💙 by Siyam
-  </div>
+  </footer>
 
 </div>
 
 <script>
-const welcome = document.getElementById("welcome");
-const card = document.getElementById("card");
-
-setTimeout(function() {
-  welcome.style.display = "none";
-  card.classList.add("show");
-}, 3000);
-
-function sayYes() {
-  document.getElementById("result").innerHTML =
-    "❤️ Yes! Thank You Sadiya ❤️";
-
-  for(let i = 0; i < 35; i++) {
-    createHeart();
-  }
-}
-
-function saySadiya() {
-  document.getElementById("result").innerHTML =
-    "💙 Specially For Sadiya 💙";
-
-  for(let i = 0; i < 15; i++) {
-    createHeart();
-  }
-}
-
 function createHeart() {
   const heart = document.createElement("div");
   heart.className = "heart";
   heart.innerHTML = "💙";
+
   heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (2 + Math.random() * 2) + "s";
 
   document.body.appendChild(heart);
 
-  setTimeout(function() {
+  setTimeout(() => {
     heart.remove();
   }, 4000);
+}
+
+function sayYes() {
+  alert("Thank you! 💙");
+  for (let i = 0; i < 15; i++) {
+    setTimeout(createHeart, i * 150);
+  }
+}
+
+function saySadiya() {
+  alert("Sending you lots of happiness! 💙");
+  for (let i = 0; i < 10; i++) {
+    setTimeout(createHeart, i * 150);
+  }
 }
 </script>
 
